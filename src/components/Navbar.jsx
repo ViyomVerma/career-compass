@@ -1,8 +1,10 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TbBrandMetabrainz } from "react-icons/tb";
+import { TbTargetArrow } from "react-icons/tb"; // ✅ This one exists
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi"; // ✅ Added mobile menu icons
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // ✅ State for toggling mobile menu
@@ -12,7 +14,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         {/* Logo Section */}
         <div className='flex gap-1 '>
-          <TbBrandMetabrainz className='text-emerald-950 text-4xl sm:text-3xl' />
+        <TbTargetArrow className='text-emerald-950 text-4xl sm:text-3xl' />
           <h1 className="text-2xl  font-bold font-serif text-emerald-950">CareerCompass</h1>
         </div>
 
