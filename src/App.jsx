@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Counselling from './pages/Counselling';
 import About from './pages/About';
-import CareerDetail from './pages/CareerDetail'; 
+import Jobs from "./pages/Jobs";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/counselling" element={<Counselling />} />
         <Route path="/about" element={<About />} />
-        <Route path="/career/:id" element={<CareerDetail />} />
+        <Route path="/jobs" element={<Jobs/>}/>
       </Routes>
     </Router>
   )

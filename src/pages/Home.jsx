@@ -5,6 +5,7 @@ import { MdOutlineEngineering } from "react-icons/md";
 import { GrAnnounce, GrUserExpert } from "react-icons/gr";
 
 
+
 const Home = () => {
       const choose=
       [
@@ -69,7 +70,7 @@ const Home = () => {
 
   return (
     <>
-        <div className='max-h-7xl bg-gradient-to-r from-emerald-100 to-emerald-800 flex flex-col md:flex-row mt-20'>
+        <div className='max-h-7xl bg-gradient-to-r from-emerald-100 to-emerald-800 flex flex-col md:flex-row mt-14 md:mt-18'>
             {/* Image Section */}
             <div className='w-full md:w-3/4 h-auto'>
               <img src='guide2.png' className='w-full h-auto object-cover' />
