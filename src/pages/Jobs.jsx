@@ -14,6 +14,8 @@ import { FaRegChartBar } from "react-icons/fa6";
 import { GiArtificialHive } from "react-icons/gi";
 import { BiServer } from "react-icons/bi";
 import { SiJenkins } from "react-icons/si";
+import { Link } from 'react-router-dom';
+import AddJob from './AddJob';
 
 const Jobs = () => {
   const path = [
@@ -178,11 +180,11 @@ const Jobs = () => {
                 className="bg-white p-6 rounded-xl shadow  border transition duration-300 hover:scale-105">
 
               <div className='bg-emerald-100  p-3 mb-4 rounded-full flex justify-center items-center gap-2'>
+              <span className="text-3xl sm:text-2xl text-emerald-900">
+                {career.icon}
+              </span>
                 <div>
-                    <icon className="text-3xl sm:text-2xl text-emerald-900 mb-4">{career.icon }</icon>
-                </div>
-                <div>
-                    <h3 className="text-xl  font-semibold mb-2sm:text-sm">{career.job}</h3>
+                    <h3 className=" font-semibold">{career.job}</h3>
                 </div>
             
               </div>
@@ -193,7 +195,7 @@ const Jobs = () => {
                 <p><span className="font-semibold">Top Skills:</span> {career.skills.join(', ')}</p>
               </div>
               <button className="mt-6 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition duration-300">
-                    Apply Now
+                    <Link to="/apply">Apply Now</Link>
               </button>
             </div>
           ))}

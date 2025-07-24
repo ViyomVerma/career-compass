@@ -48,19 +48,19 @@ const Counselling = () => {
     {
       name: "Dr. Neha Sharma",
       title: "Career Psychologist",
-      image: "/guide7.png",
+       image: `${import.meta.env.BASE_URL}guide7.png`,
       description: "Guides students based on personality and strengths.",
     },
     {
       name: "Rahul Verma",
       title: "Tech Industry Mentor",
-      image: "/guide6.png",
+       image: `${import.meta.env.BASE_URL}guide6.png`,
       description: "Helps you build a path into the software world.",
     },
     {
       name: "Sakshi Mehta",
       title: "Soft Skills Coach",
-      image: "/guide7.png",
+       image: `${import.meta.env.BASE_URL}guide7.png`,
       description: "Prepares you for interviews and personality growth.",
     },
   ];

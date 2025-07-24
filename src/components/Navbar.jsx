@@ -1,10 +1,7 @@
-// src/components/Navbar.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TbTargetArrow } from "react-icons/tb"; // ✅ This one exists
+import { BiBrain } from "react-icons/bi";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi"; // ✅ Added mobile menu icons
-
-
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // ✅ State for toggling mobile menu
@@ -13,9 +10,9 @@ const Navbar = () => {
     <nav className="bg-gradient-to-r from-emerald-100 to-emerald-800 text-white p-4 md:p-6 fixed top-0 left-0 w-full z-50">
       <div className="flex justify-between items-center">
         {/* Logo Section */}
-        <div className='flex gap-1 '>
-        <TbTargetArrow className='text-emerald-950 text-4xl sm:text-3xl' />
-          <h1 className="text-2xl  font-bold font-serif text-emerald-950">CareerCompass</h1>
+        <div className='flex items-center gap-3 px-3'>
+          <BiBrain className='text-emerald-950 text-4xl sm:text-3xl' />
+          <h1 className="text-2xl md:text-3xl  font-bold font-serif text-emerald-950">CareerCompass</h1>
         </div>
 
         {/* Menu Button for Mobile */}
@@ -31,7 +28,7 @@ const Navbar = () => {
           <li><Link to="/quiz" className="hover:underline">Quiz</Link></li>
           <li><Link to="/counselling" className="hover:underline">Counselling</Link></li>
           <li><Link to="/about" className="hover:underline">About</Link></li>
-          <li><Link to="/jobs" className=" hover:bg-emerald-400 bg-emerald-300 text-emerald-950 rounded-lg p-3">Find Jobs</Link></li>
+          <li><Link to="/jobs" className=" bg-emerald-400  hover:bg-emerald-500 p-2 rounded-2xl">Find Jobs</Link></li>
         </ul>
       </div>
 
@@ -42,7 +39,7 @@ const Navbar = () => {
           <li><Link to="/quiz" onClick={() => setIsOpen(false)} className="hover:underline">Quiz</Link></li>
           <li><Link to="/counselling" onClick={() => setIsOpen(false)} className="hover:underline">Counselling</Link></li>
           <li><Link to="/about" onClick={() => setIsOpen(false)} className="hover:underline">About</Link></li>
-          <li><Link to="/jobs" onClick={() => setIsOpen(false)} className=" hover:bg-emerald-100 bg-emerald-50 text-emerald-950 rounded-3xl py-2 px-20">Find Jobs</Link></li>
+           <li><Link to="/jobs" className=" hover:bg-emerald-400 bg-emerald-300 text-emerald-950 rounded-xl py-2 px-20">Find Jobs</Link></li>
         </ul>
       )}
     </nav>
