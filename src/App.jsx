@@ -10,7 +10,7 @@ import AddJob from "./pages/AddJob";
 
 function App() {
   return (
-    <BrowserRouter basename="/career-compass">
+    <BrowserRouter basename="/">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
