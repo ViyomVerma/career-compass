@@ -47,22 +47,22 @@ const Home = () => {
         {
           para: "This platform helped me find my true passion!",
           name: "-Riya Sharma",
-          image: `${import.meta.env.BASE_URL}guide4.png`,
+          image: `${import.meta.env.BASE_URL}career2.jpg`,
         },
         {
           para: "The quiz results matched my interests perfectly!",
           name: "-Aarav Mehta",
-          image: `${import.meta.env.BASE_URL}guide3.png`,
+          image: `${import.meta.env.BASE_URL}career3.jpg`,
         },
         {
           para: "This platform helped me find my true passion!",
           name: "-Riya Sharma",
-          image: `${import.meta.env.BASE_URL}guide4.png`,
+          image: `${import.meta.env.BASE_URL}career2.jpg`,
         },
         {
           para: "The quiz results matched my interests perfectly!",
           name: "-Aarav Mehta",
-          image: `${import.meta.env.BASE_URL}guide3.png`,
+          image: `${import.meta.env.BASE_URL}career3.jpg`,
         },
       ];
 
@@ -72,7 +72,7 @@ const Home = () => {
         <div className='max-h-7xl bg-gradient-to-r from-emerald-100 to-emerald-800 flex flex-col md:flex-row mt-14 md:mt-18'>
             {/* Image Section */}
             <div className='w-full md:w-3/4 h-auto'>
-             <img src={`${import.meta.env.BASE_URL}guide2.png`} className="w-full h-auto object-cover" />
+             <img src={`${import.meta.env.BASE_URL}career.jpg`} className="w-full h-auto object-cover" />
             </div>
 
             {/* Text Section */}
