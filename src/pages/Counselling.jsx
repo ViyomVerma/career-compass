@@ -1,7 +1,8 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Counselling = () => {
   const location = useLocation();
+   const navigate = useNavigate(); 
   const { topDomain } = location.state || {};
 
   const recommendations = {
@@ -33,7 +34,7 @@ const Counselling = () => {
         <h2 className="text-2xl font-bold text-red-600">Oops! No result found.</h2>
         <button
           className="mt-4 bg-emerald-600 text-white px-6 py-2 rounded hover:bg-emerald-700"
-          onClick={() => window.location.href = "/quiz"}
+          onClick={() => navigate("/quiz")}
         >
           Take the Quiz Again
         </button>
