@@ -72,7 +72,7 @@ const Home = () => {
         <div className='max-h-7xl bg-gradient-to-r from-emerald-100 to-emerald-800 flex flex-col md:flex-row mt-14 md:mt-18'>
             {/* Image Section */}
             <div className='w-full md:w-3/4 h-auto'>
-             <img src={`${import.meta.env.BASE_URL}career.avif`} className="w-full h-auto object-cover"  loading="lazy"/>
+             <img src={`${import.meta.env.BASE_URL}career(1).avif`} className="w-full h-auto object-cover"  loading="lazy"/>
             </div>
 
             {/* Text Section */}
