@@ -39,7 +39,7 @@ const Navbar = () => {
           <li><Link to="/quiz" onClick={() => setIsOpen(false)} className="hover:underline">Quiz</Link></li>
           <li><Link to="/counselling" onClick={() => setIsOpen(false)} className="hover:underline">Counselling</Link></li>
           <li><Link to="/about" onClick={() => setIsOpen(false)} className="hover:underline">About</Link></li>
-           <li><Link to="/jobs" className=" hover:bg-emerald-400 bg-emerald-300 text-emerald-950 rounded-xl py-2 px-20">Find Jobs</Link></li>
+           <li><Link to="/jobs" onClick={() => setIsOpen(false)}  className=" hover:bg-emerald-400 bg-emerald-300 text-emerald-950 rounded-xl py-2 px-20">Find Jobs</Link></li>
         </ul>
       )}
     </nav>

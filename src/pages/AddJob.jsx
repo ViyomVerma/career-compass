@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const AddJob = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +12,8 @@ const AddJob = () => {
     resume: null
   });
 
+  const fileInputRef = useRef(null); // ✅ File input reference
+
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
     setFormData({ ...formData, [name]: type === 'file' ? files[0] : value });
@@ -21,6 +23,8 @@ const AddJob = () => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
     alert("Application Submitted!");
+
+    // ✅ Reset form state
     setFormData({
       firstName: '',
       lastName: '',
@@ -31,10 +35,15 @@ const AddJob = () => {
       experience: '',
       resume: null
     });
+
+    // ✅ Manually clear file input
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   return (
-    <div className="max-w-md mx-auto  p-6 bg-white rounded-lg shadow-md mt-24">
+    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md mt-24">
       <h2 className="text-xl font-semibold text-center text-emerald-700 mb-6">Job Application</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="flex gap-3">
@@ -85,6 +94,9 @@ const AddJob = () => {
           value={formData.phone}
           onChange={handleChange}
           className="w-full border rounded px-3 py-2"
+          pattern="[0-9]{10}"        
+          maxLength={10}             
+          minLength={10}             
           required
         />
 
@@ -105,6 +117,7 @@ const AddJob = () => {
           value={formData.experience}
           onChange={handleChange}
           className="w-full border rounded px-3 py-2"
+          required
         />
 
         <input
@@ -113,6 +126,8 @@ const AddJob = () => {
           accept=".pdf,.doc,.docx"
           onChange={handleChange}
           className="w-full border rounded px-3 py-2 bg-white"
+          required
+          ref={fileInputRef} // ✅ Attach the ref here
         />
 
         <button
