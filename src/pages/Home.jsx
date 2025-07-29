@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FaUserCheck, FaChartLine, FaComments } from "react-icons/fa";
 import { MdOutlineEngineering } from "react-icons/md";
@@ -7,6 +8,7 @@ import { GrAnnounce, GrUserExpert } from "react-icons/gr";
 
 
 const Home = () => {
+  const navigate = useNavigate();
       const choose=
       [
           {
@@ -111,7 +113,7 @@ const Home = () => {
     </div>
 
 
-    <div className="py-5 px-6 mb-12 bg-gray-50 text-center">
+    <div className="py-5 px-6 mb-12 bg-gray-50 text-center cursor-pointer"  onClick={() => navigate("/jobs")}>
         <h2 className="text-3xl font-bold mb-6 text-emerald-600">Popular <span className='text-emerald-900'> Career Paths</span></h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
               {path.map((career, index) => (
