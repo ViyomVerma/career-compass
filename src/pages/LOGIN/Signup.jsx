@@ -1,17 +1,41 @@
 import React from 'react'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Home from '../Home';
 import { useDispatch , useSelector } from 'react-redux';
 import { setEmail , setPassword , setRole } from '../../redux/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+
 
     const dispatch = useDispatch();
     const { email , password , role} = useSelector((state) => state.auth);
     
-      const handleSubmit = (e) => {
-            e.preventDefault();
-            alert("Signup Successful!");
-            console.log("User Data:", { email, password, role });
-        };
+    const navigate=useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        toast.success("Register successfully!", {
+            position: "top-right",
+            autoClose: 4000,
+            style: {
+                padding: "20px",
+                borderRadius: "8px",
+                fontSize: "16px",
+                fontWeight: "bold",
+            },
+        });
+        console.log("User Data:", { email, password, role });
+
+        setTimeout(() => {
+                navigate("/"); // or wherever you want
+            }, 4000); // match toast autoClose time
+            
+            setTimeout(() =>{
+              dispatch(resetAuth(e.target.value));
+            },4000);
+    };
 
 
   return (
@@ -35,7 +59,7 @@ const Signup = () => {
           Welcome! Please sign up to continue.
         </p>
 
-        <form>
+        <form onSubmit={handleSubmit}>
            <div className="flex gap-3">
                 <input
                     type="text"
@@ -123,6 +147,9 @@ const Signup = () => {
         </div>
        </div> 
     </div>
+            {/* Toastify Container */}
+        <ToastContainer />
+
     </>
   )
 }

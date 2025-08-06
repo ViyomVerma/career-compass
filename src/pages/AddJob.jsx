@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddJob = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +24,16 @@ const AddJob = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Submitted:", formData);
-    alert("Application Submitted!");
+    toast.success("Form submitted successfully!", {
+                    position: "top-right",
+                    autoClose: 4000,
+                    style: {
+                        padding: "20px",
+                        borderRadius: "8px",
+                        fontSize: "16px",
+                        fontWeight: "bold",
+                    },
+                }); 
 
     // ✅ Reset form state
     setFormData({
@@ -137,6 +148,8 @@ const AddJob = () => {
           Submit
         </button>
       </form>
+      <ToastContainer/>
+      
     </div>
   );
 };

@@ -1,16 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
-import { setEmail, setPassword, setRole } from "../../redux/authSlice";
+import { resetAuth, setEmail, setPassword, setRole } from "../../redux/authSlice";
+import { useNavigate } from 'react-router-dom';
+import Home from '../Home';
 
 const Login = () => {
   const { role, email, password } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  
+  const navigate=useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    alert("Login Successfully");
+    toast.success("Login successfully!", {
+                position: "top-right",
+                autoClose: 4000,
+                style: {
+                    padding: "20px",
+                    borderRadius: "8px",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                },
+            }); 
+      // Navigate after toast delay
+    setTimeout(() => {
+        navigate("/"); // or wherever you want
+    }, 4000); // match toast autoClose time
+    
+    setTimeout(() =>{
+      dispatch(resetAuth(e.target.value));
+    },4000);
   };
+
 
   const isFormValid = email.trim() !== "" && password.trim() !== "";
 
@@ -109,6 +133,7 @@ const Login = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer/>
     </div>
   );
 };
