@@ -7,6 +7,8 @@ import Counselling from './pages/Counselling';
 import About from './pages/About';
 import Jobs from "./pages/Jobs"; 
 import AddJob from "./pages/AddJob";
+import Login from "./pages/LOGIN/Login";
+import Signup from "./pages/LOGIN/Signup";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         <Route path="/counselling" element={<Counselling />} />
         <Route path="/about" element={<About />} />
         <Route path="/jobs" element={<Jobs />} />
+        <Route path="/login" element={<Login />}/>
         <Route path="/apply" element={<AddJob />} />
+        <Route path="/signup" element={<Signup/>} />
       </Routes>
     </BrowserRouter>
   );

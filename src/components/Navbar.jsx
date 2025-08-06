@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiBrain } from "react-icons/bi";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi"; // ✅ Added mobile menu icons
+import { FaUserAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // ✅ State for toggling mobile menu
@@ -28,6 +29,7 @@ const Navbar = () => {
           <li><Link to="/quiz" className="hover:underline">Quiz</Link></li>
           <li><Link to="/counselling" className="hover:underline">Counselling</Link></li>
           <li><Link to="/about" className="hover:underline">About</Link></li>
+          <li><Link to="/login"><FaUserAlt /></Link></li>
           <li><Link to="/jobs" className=" bg-emerald-400  hover:bg-emerald-500 p-2 rounded-2xl">Find Jobs</Link></li>
         </ul>
       </div>
@@ -39,6 +41,11 @@ const Navbar = () => {
           <li><Link to="/quiz" onClick={() => setIsOpen(false)} className="hover:underline">Quiz</Link></li>
           <li><Link to="/counselling" onClick={() => setIsOpen(false)} className="hover:underline">Counselling</Link></li>
           <li><Link to="/about" onClick={() => setIsOpen(false)} className="hover:underline">About</Link></li>
+          <li className="flex justify-center">
+            <Link to="/login" onClick={() => setIsOpen(false)}>
+              <FaUserAlt className="text-1xl" />
+            </Link>
+          </li>
            <li><Link to="/jobs" onClick={() => setIsOpen(false)}  className=" hover:bg-emerald-400 bg-emerald-300 text-emerald-950 rounded-xl py-2 px-20">Find Jobs</Link></li>
         </ul>
       )}
