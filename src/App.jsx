@@ -9,6 +9,7 @@ import Jobs from "./pages/Jobs";
 import AddJob from "./pages/AddJob";
 import Login from "./pages/LOGIN/Login";
 import Signup from "./pages/LOGIN/Signup";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/apply" element={<AddJob />} />
         <Route path="/signup" element={<Signup/>} />
       </Routes>
+
+       <Footer />
     </BrowserRouter>
   );
 }
